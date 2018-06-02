@@ -9,4 +9,4 @@ eval(whut);
 xhttp.open("GET", path, true); 
 xhttp.send(); 
 var res = "/Imnotdumb/apps/" + prompt('Enter app id:') + ".js";
-prompt("please press ctrl+c to copy the text below",loadXMLDoc(res))
+prompt("please press ctrl+c to copy the text below","javascript:" + loadXMLDoc(res))
