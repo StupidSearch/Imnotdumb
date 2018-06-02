@@ -90,8 +90,6 @@ function setCookie(cname, cvalue, exdays) {
 }
 function importApp() {
 var b = "/Imnotdumb/apps/" + prompt('Enter app id:') + ".js";
-var res = prompt('What slot should this be stored in?');
-setCookie("app" + res,b,"999999999999")
 loadXMLDoc(b);
   }
 </script>
