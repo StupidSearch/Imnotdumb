@@ -79,9 +79,19 @@ eval(whut);
 }; 
 xhttp.open("GET", path, true); 
 xhttp.send(); 
+//set a cookie
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+//import app button
 }
 function importApp() {
 var b = "/Imnotdumb/apps/" + prompt('Enter app id:') + ".js";
+var res = prompt('What slot should this be stored in?');
+setCookie("app" + res,b,"999999999999")
 loadXMLDoc(b);
   }
 </script>
