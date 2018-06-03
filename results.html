@@ -15,7 +15,15 @@ var ID = "ssResults";
     gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
-  })();
+  })();</script>
+  <script>
+  //set a cookie
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
   function loadXMLDoc(path) { 
 var whut; 
 var xhttp = new XMLHttpRequest(); 
@@ -26,13 +34,8 @@ eval(whut);
 }; 
 xhttp.open("GET", path, true); 
 xhttp.send(); 
-//set a cookie
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
+
+
 //import app button
 }
 function importApp() {
