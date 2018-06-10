@@ -1,18 +1,20 @@
-<div id="paypal-button"></div>
+<!DOCTYPE html>
 
-<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+</head>
 
-<script>
-    paypal.Button.render({
+<body>
+    <div id="paypal-button"></div>
 
-        env: 'production', // Or 'sandbox'
+    <script>
+        paypal.Button.render({
 
-        client: {
-            sandbox:    'AbctZYxardRuA1xig-lDZM22-1zggTaDsffmv1aa5ecTZ230Az-MtSWiJPMNr-LAclYK3CDO04en9rqs',
-        },
+          sandbox:    'AbctZYxardRuA1xig-lDZM22-1zggTaDsffmv1aa5ecTZ230Az-MtSWiJPMNr-LAclYK3CDO04en9rqs',
 
-        commit: true, // Show a 'Pay Now' button
-
+             commit: true, // Show a 'Pay Now' button
         payment: function(data, actions) {
             return actions.payment.create({
                 payment: {
@@ -24,14 +26,10 @@
                 }
             });
         },
+            onAuthorize: function(data, actions) {
+                /* Execute the payment here */
+            }
 
-        onAuthorize: function(data, actions) {
-            return actions.payment.execute().then(function(payment) {
-
-                // The payment is complete!
-                // You can now show a confirmation message to the customer
-            });
-        }
-
-    }, '#paypal-button');
-</script>
+        }, '#paypal-button');
+    </script>
+</body>
